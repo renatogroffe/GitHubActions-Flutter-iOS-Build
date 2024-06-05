@@ -1,0 +1,38 @@
+name: build-flutter-ios
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+  
+env:
+  DIR_MOBILEAPP: './src/appgroffe'
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Exibir a versao atual do macOS
+        run: sw_vers -productVersion
+        
+      - name: Instalar o Flutter
+        uses: subosito/flutter-action@v2.14.0
+        with:
+          flutter-version: 3.22.1
+          channel: stable
+
+      - name: Exibir a versao instalada do Flutter
+        run: flutter --version
+
+      - name: Informacoes e configuracoes do Flutter
+        run: flutter doctor -v
+
+      - name: Executar Build para Android
+        run: |
+          cd ${{ env.DIR_MOBILEAPP }}
+          flutter build ios --simulator --debug
