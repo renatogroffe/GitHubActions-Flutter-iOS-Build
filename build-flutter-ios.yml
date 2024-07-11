@@ -32,7 +32,7 @@ jobs:
       - name: Informacoes e configuracoes do Flutter
         run: flutter doctor -v
 
-      - name: Executar Build para Android
+      - name: Executar Build para iOS
         run: |
           cd ${{ env.DIR_MOBILEAPP }}
           flutter build ios --simulator --debug
