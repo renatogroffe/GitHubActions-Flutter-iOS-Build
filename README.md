@@ -9,5 +9,5 @@ Aplicação utilizada como base:
 
 ## Atualizações em 25/02/2024
 
-1) Uso do **Java 17** no **workflow** durante o build para **Android**.
+1) Uso do **Java 17** no **workflow** durante o build para **iOS**.
 2) A aplicação foi atualizada para trabalhar com o **Flutter 3.29.0**.
